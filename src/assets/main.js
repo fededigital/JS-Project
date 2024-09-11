@@ -1,4 +1,7 @@
 // Este código fue sacado de la página de RapidApi para obtener la Api de Youtube
+
+//Se instaló la dependencia "npm install gh-pages --save-dev"
+
 const url = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCNnNCBgckxzqIh1Txw5cgSg&part=snippet%2Cid&order=date&maxResults=30';
 
 // Se guarda del DOM el elemento donde se van a mostrar los datos
