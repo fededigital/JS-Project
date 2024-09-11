@@ -5,7 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="./assets/main.js"></script>
+        <!-- El defer se encarga de ejecutar el script solo cuando el DOM esté listo, ideal para cuando el JS interactúa con el DOM -->
+         <!-- Tambien existe script async donde el script se ejecuta en paralelo con el HTML, este no espera a que el DOM esté cargado -->
+        <script defer src="./assets/main.js"></script>
     </head>
 
     <body>

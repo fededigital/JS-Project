@@ -1,5 +1,5 @@
 // Este código fue sacado de la página de RapidApi para obtener la Api de Youtube
-const url = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCNnNCBgckxzqIh1Txw5cgSg&part=snippet%2Cid&order=date&maxResults=9';
+const url = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCNnNCBgckxzqIh1Txw5cgSg&part=snippet%2Cid&order=date&maxResults=30';
 
 // Se guarda del DOM el elemento donde se van a mostrar los datos
 const content = null || document.getElementById('content')
@@ -27,7 +27,7 @@ try {
 			<div class="group relative">
 				<div
 					class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-					<img src="${video.snippet.thumbnail.high.url}" alt="${video.snippet.description}" class="w-full">
+					<img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}" class="w-full">
 				</div>
 				<div class="mt-4 flex justify-between">
 					<h3 class="text-sm text-gray-700">
@@ -36,13 +36,17 @@ try {
 					</h3>
 				</div>
 			</div>
-		`).slice(0,4).join('')}
+		`).join('')}
 	`;
 	// slice() sirve para realizar una copia de una arreglo y solo agarrar cierta cantidad de elementos, en este caso solo selecciona los primeros 5 elementos del arreglo del indice 0 al 4.
 	// join() sirve para juntar los elementos de un arreglo, dentro de los parentesis se pondrá lo que abrá en medio de esos elementos, ya sea un espacio, un guion etc.
 	// ej. console.log(elements.join('-'));
 	// Expected output: "Fire-Air-Water"
+
+	//Esto va anexar el HTML de acuerdo el template creado en view.
+	content.innerHTML = view;
 } catch (error) {
-	
+	console.log(error);
+	alert(error);
 }
 })();
