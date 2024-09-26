@@ -2,7 +2,7 @@
 
 //Se instaló la dependencia "npm install gh-pages --save-dev"
 
-const url = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCNnNCBgckxzqIh1Txw5cgSg&part=snippet%2Cid&order=date&maxResults=30';
+const url = 'https://youtube-v31.p.rapidapi.com/search?channelId=UC55-mxUj5Nj3niXFReG44OQ&part=snippet%2Cid&order=date&maxResults=23';
 
 // Se guarda del DOM el elemento donde se van a mostrar los datos
 const content = null || document.getElementById('content')
@@ -27,14 +27,14 @@ try {
 	const videos = await fetchData(url)
 	let view = `
 		${videos.items.map(video => `
-			<div class="group relative">
-				<div
-					class="w-full bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
-					<img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}" class="w-full">
+			<div class="content-video">
+				<div class="video-box">
+					<a href="https://www.youtube.com/watch?v=${video.id.videoId}" target="_blank">
+						<img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.description}">
+					</a>
 				</div>
-				<div class="mt-4 flex justify-between">
-					<h3 class="text-sm text-gray-700">
-						<span aria-hidden="true" class="absolute inset-0"></span>
+				<div class="video-title-box">
+					<h3 class="video-title">
 						${video.snippet.title}
 					</h3>
 				</div>
