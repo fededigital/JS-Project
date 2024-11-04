@@ -1,2 +1,2 @@
 # JS-Project
-Un proyecto sencillo de JavaScript.
+Un proyecto sencillo hecho con JavaScript.
